@@ -11,25 +11,17 @@ import 'package:provider/provider.dart';
 
 void main() {
   Bloc.observer = MyBlocObserver();
-  runApp(DependencyInjectorHelper(
-      providers: [
-        Provider<ApiProvider>(create: (context) => ApiProvider()),
-      ],
-      repositories: [
-        RepositoryProvider<HomeRepository>(
-          create: (context) =>
-              HomeRepository(apiProvider: context.read<ApiProvider>()),
-        ),
-        RepositoryProvider<DetailRepository>(
-            create: (context) =>
-                DetailRepository(apiProvider: context.read<ApiProvider>())),
-      ],
-      /*blocs: [
-    BlocProvider<HomeBloc>(
+  runApp(DependencyInjectorHelper(providers: [
+    Provider<ApiProvider>(create: (context) => ApiProvider()),
+  ], repositories: [
+    RepositoryProvider<HomeRepository>(
+      create: (context) =>
+          HomeRepository(apiProvider: context.read<ApiProvider>()),
+    ),
+    RepositoryProvider<DetailRepository>(
         create: (context) =>
-            HomeBloc(homeRepository: context.read<HomeRepository>()))
-  ],*/
-      child: MyApp()));
+            DetailRepository(apiProvider: context.read<ApiProvider>())),
+  ], child: MyApp()));
 }
 
 class MyApp extends StatelessWidget {
