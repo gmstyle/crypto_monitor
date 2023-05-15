@@ -1,5 +1,5 @@
 import 'package:crypto_monitor/blocs/home/home_bloc.dart';
-import 'package:crypto_monitor/ui/screens/dashboard/tabs/home/currency_list_widget.dart';
+import 'package:crypto_monitor/ui/screens/dashboard/tabs/home/widgets/currency_list_widget.dart';
 import 'package:crypto_monitor/ui/screens/dashboard/tabs/home/widgets/search_bar_widget.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
