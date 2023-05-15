@@ -8,4 +8,10 @@ class MyBlocObserver extends BlocObserver {
     log('${bloc.runtimeType} $change');
     super.onChange(bloc, change);
   }
+
+  @override
+  void onError(BlocBase bloc, Object error, StackTrace stackTrace) {
+    log('${bloc.runtimeType} $error');
+    super.onError(bloc, error, stackTrace);
+  }
 }
