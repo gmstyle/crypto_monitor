@@ -1,3 +1,4 @@
+import 'package:crypto_monitor/mappers/asset_mapper.dart';
 import 'package:crypto_monitor/providers/api_provider.dart';
 import 'package:crypto_monitor/repositories/detail_repository.dart';
 import 'package:crypto_monitor/repositories/home_repository.dart';
@@ -11,16 +12,20 @@ import 'package:provider/provider.dart';
 
 void main() {
   Bloc.observer = MyBlocObserver();
-  runApp(DependencyInjectorHelper(providers: [
+  runApp(DependencyInjectorHelper(mappers: [
+    Provider<AssetMapper>(create: (context) => AssetMapper())
+  ], providers: [
     Provider<ApiProvider>(create: (context) => ApiProvider()),
   ], repositories: [
     RepositoryProvider<HomeRepository>(
-      create: (context) =>
-          HomeRepository(apiProvider: context.read<ApiProvider>()),
+      create: (context) => HomeRepository(
+          apiProvider: context.read<ApiProvider>(),
+          assetMapper: context.read<AssetMapper>()),
     ),
     RepositoryProvider<DetailRepository>(
-        create: (context) =>
-            DetailRepository(apiProvider: context.read<ApiProvider>())),
+        create: (context) => DetailRepository(
+            apiProvider: context.read<ApiProvider>(),
+            assetMapper: context.read<AssetMapper>())),
   ], child: MyApp()));
 }
 

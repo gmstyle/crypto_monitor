@@ -1,16 +1,16 @@
 import 'package:equatable/equatable.dart';
 
-class ApiResponse extends Equatable {
+class ApiResponseDto extends Equatable {
   final dynamic data;
   final int timestamp;
 
-  const ApiResponse({
+  const ApiResponseDto({
     required this.data,
     required this.timestamp,
   });
 
-  factory ApiResponse.fromJson(Map<String, dynamic> json) {
-    return ApiResponse(
+  factory ApiResponseDto.fromJson(Map<String, dynamic> json) {
+    return ApiResponseDto(
       data: json['data'] as dynamic,
       timestamp: json['timestamp'] as int,
     );

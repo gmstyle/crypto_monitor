@@ -2,7 +2,7 @@ part of 'home_bloc.dart';
 
 class HomeState extends Equatable {
   final BlocStatus status;
-  final List<AssetUI> assetsUI;
+  final List<Asset> assetsUI;
   final String? error;
   const HomeState._({
     required this.status,
@@ -14,7 +14,7 @@ class HomeState extends Equatable {
 
   const HomeState.loading() : this._(status: BlocStatus.loading);
 
-  const HomeState.loaded({required List<AssetUI> assetsUI})
+  const HomeState.loaded({required List<Asset> assetsUI})
       : this._(status: BlocStatus.loaded, assetsUI: assetsUI);
 
   const HomeState.error({required String error})

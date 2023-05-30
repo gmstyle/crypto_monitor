@@ -34,7 +34,7 @@ class DetailWidget extends StatelessWidget {
         }
 
         if (state.status == BlocStatus.loaded) {
-          var asset = state.data!.assetUI;
+          var asset = state.data!.asset;
           return Column(
             children: [
               Text(

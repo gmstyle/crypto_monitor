@@ -1,6 +1,6 @@
 import 'package:equatable/equatable.dart';
 
-class AssetUI extends Equatable {
+class Asset extends Equatable {
   final String? id;
   final String? rank;
   final String? symbol;
@@ -14,7 +14,7 @@ class AssetUI extends Equatable {
   final String? vwap24Hr;
   final String? imgageUrl;
 
-  const AssetUI({
+  const Asset({
     required this.id,
     required this.rank,
     required this.symbol,
@@ -29,8 +29,8 @@ class AssetUI extends Equatable {
     required this.imgageUrl,
   });
 
-  factory AssetUI.fromJson(Map<String, dynamic> json) {
-    return AssetUI(
+  factory Asset.fromJson(Map<String, dynamic> json) {
+    return Asset(
       id: json['id'] as String?,
       rank: json['rank'] as String?,
       symbol: json['symbol'] as String?,

@@ -3,7 +3,7 @@ import 'dart:async';
 import 'package:bloc/bloc.dart';
 import 'package:equatable/equatable.dart';
 
-import '../../models/ui/assetUI.dart';
+import '../../models/asset.dart';
 import '../../repositories/home_repository.dart';
 import '../bloc_status_enum.dart';
 

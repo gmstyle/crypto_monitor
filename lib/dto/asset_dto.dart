@@ -1,6 +1,6 @@
 import 'package:equatable/equatable.dart';
 
-class Asset extends Equatable {
+class AssetDto extends Equatable {
   final String? id;
   final String? rank;
   final String? symbol;
@@ -13,7 +13,7 @@ class Asset extends Equatable {
   final String? changePercent24Hr;
   final String? vwap24Hr;
 
-  const Asset({
+  const AssetDto({
     required this.id,
     required this.rank,
     required this.symbol,
@@ -27,8 +27,8 @@ class Asset extends Equatable {
     required this.vwap24Hr,
   });
 
-  factory Asset.fromJson(Map<String, dynamic> json) {
-    return Asset(
+  factory AssetDto.fromJson(Map<String, dynamic> json) {
+    return AssetDto(
       id: json['id'] as String?,
       rank: json['rank'] as String?,
       symbol: json['symbol'] as String?,

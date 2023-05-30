@@ -2,7 +2,7 @@ part of 'detail_bloc.dart';
 
 class DetailState extends Equatable {
   final BlocStatus status;
-  final DetailDataUI? data;
+  final DetailData? data;
   final String? error;
 
   const DetailState._({
@@ -15,7 +15,7 @@ class DetailState extends Equatable {
 
   const DetailState.loading() : this._(status: BlocStatus.loading);
 
-  const DetailState.loaded({required DetailDataUI data})
+  const DetailState.loaded({required DetailData data})
       : this._(status: BlocStatus.loaded, data: data);
 
   const DetailState.error({required String error})

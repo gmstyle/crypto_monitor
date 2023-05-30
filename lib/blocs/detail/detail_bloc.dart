@@ -2,7 +2,7 @@ import 'dart:async';
 
 import 'package:bloc/bloc.dart';
 import 'package:crypto_monitor/blocs/bloc_status_enum.dart';
-import 'package:crypto_monitor/models/ui/detail_dataUI.dart';
+import 'package:crypto_monitor/models/detail_data.dart';
 import 'package:equatable/equatable.dart';
 
 import '../../repositories/detail_repository.dart';

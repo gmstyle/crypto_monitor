@@ -4,7 +4,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:syncfusion_flutter_charts/charts.dart';
 
 import '../../../../blocs/bloc_status_enum.dart';
-import '../../../../models/data/history_item.dart';
+import '../../../../dto/history_item_dto.dart';
 
 class ChartWidget extends StatelessWidget {
   const ChartWidget({super.key});
@@ -35,11 +35,11 @@ class ChartWidget extends StatelessWidget {
             primaryXAxis: DateTimeAxis(),
             primaryYAxis: NumericAxis(),
             series: <ChartSeries>[
-              LineSeries<HistoryItem, DateTime>(
+              LineSeries<HistoryItemDto, DateTime>(
                 dataSource: history,
-                xValueMapper: (HistoryItem item, _) =>
+                xValueMapper: (HistoryItemDto item, _) =>
                     DateTime.parse(item.date as String),
-                yValueMapper: (HistoryItem item, _) =>
+                yValueMapper: (HistoryItemDto item, _) =>
                     double.parse(item.priceUsd),
                 /*dataLabelSettings: const DataLabelSettings(
                                     isVisible: true,

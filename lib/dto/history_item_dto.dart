@@ -1,20 +1,20 @@
 import 'package:equatable/equatable.dart';
 
-class HistoryItem extends Equatable {
+class HistoryItemDto extends Equatable {
   final String priceUsd;
   final int time;
   final String? circulatingSupply;
   final String? date;
 
-  const HistoryItem({
+  const HistoryItemDto({
     required this.priceUsd,
     required this.time,
     required this.circulatingSupply,
     required this.date,
   });
 
-  factory HistoryItem.fromJson(Map<String, dynamic> json) {
-    return HistoryItem(
+  factory HistoryItemDto.fromJson(Map<String, dynamic> json) {
+    return HistoryItemDto(
       priceUsd: json['priceUsd'] as String,
       time: json['time'] as int,
       circulatingSupply: json['circulatingSupply'] as String?,

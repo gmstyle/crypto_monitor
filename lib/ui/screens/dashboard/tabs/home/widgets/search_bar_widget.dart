@@ -1,5 +1,5 @@
 import 'package:crypto_monitor/blocs/home/home_bloc.dart';
-import 'package:crypto_monitor/models/ui/assetUI.dart';
+import 'package:crypto_monitor/models/asset.dart';
 import 'package:crypto_monitor/router/app_route.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -18,7 +18,7 @@ class SearchBarWidget extends StatelessWidget {
   Widget build(BuildContext context) {
     return BlocBuilder<HomeBloc, HomeState>(builder: (context, state) {
       List<String> suggestions = [];
-      List<AssetUI> currencies = [];
+      List<Asset> currencies = [];
       if (state.status == BlocStatus.loaded) {
         suggestions = state.assetsUI.map((e) => e.name!).toList();
         currencies = state.assetsUI;
