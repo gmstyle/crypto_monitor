@@ -1,3 +1,4 @@
+import 'package:crypto_monitor/ui/screens/dashboard/tabs/settings/widgets/settings_view.dart';
 import 'package:flutter/material.dart';
 
 class SettingsTab extends StatelessWidget {
@@ -6,7 +7,7 @@ class SettingsTab extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return const Center(
-      child: Text('Settings TODO'),
+      child: SettingsView(),
     );
   }
 }
